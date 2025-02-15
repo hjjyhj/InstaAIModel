@@ -8,20 +8,19 @@ def tokenize_function(examples):
     return tokenizer(examples["Posts"], truncation=True, padding="max_length", max_length=512)
 
 # Load dataset
-DATA_FILE = "influencer_recommendation_data.jsonl"
-dataset = load_dataset("json", data_files=DATA_FILE, split="train")
-dataset = dataset.shuffle(seed=42) # shuffle dataset
+DATA_FILE = "post_training_data.jsonl"
+dataset = load_dataset("json", data_files=DATA_FILE, split="train").shuffle(seed=42)
 
 # Load model and tokenizer
-MODEL_NAME = "meta-llama/Meta-Llama-3-8B-Instruct"
-tokenizer = LlamaTokenizer.from_pretrained(MODEL_NAME)
+MODEL_PATH = "./Meta-Llama-3.1-8B-Instruct"
+tokenizer = LlamaTokenizer.from_pretrained(MODEL_PATH)
 
-dataset = dataset.map(tokenize_function, batched=True)
+dataset = dataset.map(tokenize_function, batched=True, num_proc=8) 
 
 # Load Llama3 with 4-bit quantization
 model = LlamaForCausalLM.from_pretrained(
-    MODEL_NAME,
-    load_in_4bit=True,  
+    MODEL_PATH,
+    load_in_4bit=True,
     torch_dtype=torch.float16,
     device_map="auto"
 )
