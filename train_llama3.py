@@ -1,124 +1,74 @@
 import torch
-import os
 from datasets import load_dataset
-from transformers import (
-    LlamaForCausalLM,
-    AutoTokenizer,
-    TrainingArguments,
-    Trainer,
-    BitsAndBytesConfig
-)
+from transformers import LlamaForCausalLM, TrainingArguments, Trainer, AutoTokenizer
 from peft import LoraConfig, get_peft_model, TaskType
-from flash_attn.layers import FlashAttention 
-
-# Check CUDA availability
-device = "cuda" if torch.cuda.is_available() else "cpu"
-print(f"Using device: {device}")
-
-# Define dataset processing
-def tokenize_function(examples):
-    """Tokenize text and ensure labels are included"""
-    tokenized_inputs = tokenizer(
-        examples["text"], 
-        truncation=True, 
-        padding="max_length",  # Ensures all tensors are same length
-        max_length=512,
-    )
-    tokenized_inputs["labels"] = tokenized_inputs["input_ids"].copy()  # Copy input_ids to labels
-    return tokenized_inputs
+import os
 
 # Load dataset
 DATA_FILE = "post_training_data.jsonl"
 dataset = load_dataset("json", data_files=DATA_FILE, split="train").shuffle(seed=42)
 
-# Define model path
-MODEL_PATH = "/tmp/huggingface_cache/hub/models--meta-llama--Llama-3.1-8B-Instruct/snapshots/0e9e39f249a16976918f6564b8830bc894c89659"
-
 # Load tokenizer
+MODEL_PATH = "/tmp_data/models/Llama-3.1-8B-Instruct"
 tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH, legacy=False)
-tokenizer.pad_token = tokenizer.eos_token
+tokenizer.pad_token = tokenizer.eos_token  # Set pad token
 
-# Tokenize dataset
-dataset = dataset.map(tokenize_function, batched=True, num_proc=8)
+# Tokenization function (fixes padding/truncation issue)
+def tokenize_function(examples):
+    tokenized = tokenizer(
+        examples["text"], 
+        truncation=True, 
+        padding="max_length",  # Ensure all inputs are of fixed length
+        max_length=512,
+        return_tensors="pt"
+    )
+    tokenized["labels"] = tokenized["input_ids"].clone()  # Ensure labels are of the same length
+    return tokenized
 
-# Load Llama3 with updated 4-bit quantization config
+# Apply tokenization with consistent padding
+dataset = dataset.map(tokenize_function, batched=True, num_proc=8, remove_columns=["text"])  
+
+# Load Llama3 with 4-bit quantization using BitsAndBytesConfig
+from transformers import BitsAndBytesConfig
+
 quantization_config = BitsAndBytesConfig(
     load_in_4bit=True,
-    bnb_4bit_compute_dtype=torch.float16,
-    bnb_4bit_use_double_quant=True,
-    bnb_4bit_quant_type="nf4"
+    bnb_4bit_compute_dtype=torch.float32,  # Use float32 for stability
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_use_double_quant=True
 )
 
-# Load model
 model = LlamaForCausalLM.from_pretrained(
     MODEL_PATH,
     quantization_config=quantization_config,
+    torch_dtype=torch.float16,
     device_map="auto"
 )
 
-# Enable Flash Attention
-print("Enabling Flash Attention...")
-for name, module in model.named_modules():
-    if isinstance(module, torch.nn.MultiheadAttention):
-        module.forward = FlashAttention.apply  # Replace standard attention with FlashAttention
+# Enable training mode
+model.train()
 
-# Enable memory optimizations
-model.gradient_checkpointing_enable()  # Reduces memory usage
-model = torch.compile(model)  # Speeds up execution
-
-# LoRA configuration
+# LoRA Configuration
 lora_config = LoraConfig(
     task_type=TaskType.CAUSAL_LM, 
     r=16,  
     lora_alpha=32,  
     lora_dropout=0.05,  
-    target_modules=["q_proj", "v_proj"]  
+    target_modules=["q_proj", "v_proj"]
 )
 
-# Apply LoRA to the model
+# Apply LoRA to model
 model = get_peft_model(model, lora_config)
 
-# Trainer with correct loss computation
-class CustomTrainer(Trainer):
-    def compute_loss(self, model, inputs, return_outputs=False):
-        labels = inputs.pop("labels")  # Extract labels
-        outputs = model(**inputs)
-        logits = outputs.logits
-        loss_fct = torch.nn.CrossEntropyLoss()
-
-        # Shift labels and logits for causal language modeling
-        shift_logits = logits[..., :-1, :].contiguous()
-        shift_labels = labels[..., 1:].contiguous()
-
-        # Compute loss
-        loss = loss_fct(shift_logits.view(-1, shift_logits.size(-1)), shift_labels.view(-1))
-
-        return (loss, outputs) if return_outputs else loss
-
-# Adjust batch size dynamically based on GPU memory
-def get_batch_size():
-    total_memory = torch.cuda.get_device_properties(0).total_memory
-    if total_memory >= 48 * 10**9:  # 48GB+ GPU
-        return 16
-    elif total_memory >= 40 * 10**9:  # 40GB+ GPU
-        return 8
-    elif total_memory >= 24 * 10**9:  # 24GB GPU
-        return 4
-    else:  # 16GB or lower GPU
-        return 2
-
-# Training arguments
+# Training Arguments
 training_args = TrainingArguments(
     output_dir="./llama3_finetuned",  
-    per_device_train_batch_size=get_batch_size(), 
-    gradient_accumulation_steps=4,  # Helps if memory is tight
+    per_device_train_batch_size=4,  
+    gradient_accumulation_steps=8,  
     num_train_epochs=3,  
-    fp16=True,  # Mixed precision for speed and memory optimization
-    optim="adamw_torch",  # Faster optimizer for training
+    fp16=True,  
 
-    learning_rate=1e-5,  # Lower learning rate for stable training
-    warmup_steps=500,  # Helps with convergence
-
+    learning_rate=2e-5,  
     save_steps=500,  
     save_total_limit=2,  
     logging_steps=100,  
@@ -127,21 +77,36 @@ training_args = TrainingArguments(
     save_safetensors=True, 
 )
 
-# Initialize trainer
+# Custom Trainer to explicitly compute loss
+class CustomTrainer(Trainer):
+    def compute_loss(self, model, inputs, return_outputs=False, **kwargs):
+        labels = inputs.get("labels")
+        outputs = model(**inputs)
+        logits = outputs.get("logits")
+
+        if labels is not None:
+            loss_fct = torch.nn.CrossEntropyLoss()
+            loss = loss_fct(logits.view(-1, logits.size(-1)), labels.view(-1))
+        else:
+            loss = None
+
+        return (loss, outputs) if return_outputs else loss
+
+# Initialize Trainer
 trainer = CustomTrainer(
     model=model,
     args=training_args,
     train_dataset=dataset,
-    tokenizer=tokenizer  # Use tokenizer correctly
+    tokenizer=tokenizer
 )
 
-# Start training
+# Start Training
 trainer.train()
 
-# Save the fine-tuned model
+# Save model if training is complete
 if trainer.state.global_step >= trainer.state.max_steps:
     model.save_pretrained("llama3_finetuned")
     tokenizer.save_pretrained("llama3_finetuned")
     print("Training complete! Fine-tuned model saved in 'llama3_finetuned'.")
 else:
-    print("Training was interrupted before completion. Checkpoints saved, but model not fully saved yet.")
+    print("Training not done yet. Checkpoints saved.")
