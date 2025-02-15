@@ -1,19 +1,26 @@
 import torch
 from datasets import load_dataset
-from transformers import LlamaForCausalLM, LlamaTokenizer, TrainingArguments, Trainer
+from transformers import LlamaForCausalLM, LlamaTokenizer, TrainingArguments, Trainer, AutoModelForCausalLM, AutoTokenizer
 from peft import LoraConfig, get_peft_model, TaskType
 import os
 
 def tokenize_function(examples):
-    return tokenizer(examples["Posts"], truncation=True, padding="max_length", max_length=512)
+    return tokenizer(
+        examples["text"], 
+        truncation=True, 
+        padding="longest",  
+        max_length=512
+    )
 
 # Load dataset
 DATA_FILE = "post_training_data.jsonl"
 dataset = load_dataset("json", data_files=DATA_FILE, split="train").shuffle(seed=42)
 
 # Load model and tokenizer
-MODEL_PATH = "./Meta-Llama-3.1-8B-Instruct"
-tokenizer = LlamaTokenizer.from_pretrained(MODEL_PATH)
+MODEL_PATH = "/tmp/huggingface_cache/hub/models--meta-llama--Llama-3.1-8B-Instruct/snapshots/0e9e39f249a16976918f6564b8830bc894c89659"
+
+tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH, legacy=False)
+tokenizer.pad_token = tokenizer.eos_token
 
 dataset = dataset.map(tokenize_function, batched=True, num_proc=8) 
 
