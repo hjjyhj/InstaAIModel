@@ -1,88 +1,75 @@
 import torch
-import random
+from datasets import load_dataset
+from transformers import LlamaForCausalLM, LlamaTokenizer, TrainingArguments, Trainer
+from peft import LoraConfig, get_peft_model, TaskType
 import os
-import pandas as pd
-from datasets import load_dataset, Dataset
-from transformers import GPT2Tokenizer, GPT2LMHeadModel, Trainer, TrainingArguments, DataCollatorForLanguageModeling
 
-# ✅ Check if GPU is available
-device = "cuda" if torch.cuda.is_available() else "cpu"
-print(f"🚀 Training on: {device}")
-
-# ✅ Set save directory
-SAVE_DIR = "./fine_tuned_gpt2"
-
-# ✅ Load dataset (assumes JSONL format)
-dataset = load_dataset("json", data_files="gpt2_finetune.jsonl", split="train")
-
-# ✅ Shuffle the dataset before splitting
-dataset = dataset.shuffle(seed=42)
-
-# ✅ Split the dataset (Train on first half, save second half for later training)
-total_size = len(dataset)
-half_size = total_size // 100
-train_dataset = dataset.select(range(half_size))  # Use first half
-remaining_dataset = dataset.select(range(half_size, total_size))  # Save for later
-
-# ✅ Save remaining dataset for future training
-remaining_dataset.to_json("gpt2_finetune_remaining.jsonl")
-print(f"✅ Training on {half_size} samples. Remaining {total_size - half_size} saved for future training.")
-
-# ✅ Load tokenizer & model (Resume from checkpoint if exists)
-tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
-tokenizer.pad_token = tokenizer.eos_token  # GPT-2 doesn't have a padding token
-
-try:
-    model = GPT2LMHeadModel.from_pretrained(SAVE_DIR)  # Resume from checkpoint
-    print("✅ Resuming training from last checkpoint!")
-except:
-    model = GPT2LMHeadModel.from_pretrained("gpt2")
-    print("⚡ Starting training from scratch!")
-
-# ✅ Move model to GPU
-model.to(device)
-
-# ✅ Tokenize dataset
 def tokenize_function(examples):
-    return tokenizer(examples["text"], truncation=True, padding="max_length", max_length=128)
+    return tokenizer(examples["Posts"], truncation=True, padding="max_length", max_length=512)
 
-tokenized_train_dataset = train_dataset.map(tokenize_function, batched=True)
+# Load dataset
+DATA_FILE = "influencer_recommendation_data.jsonl"
+dataset = load_dataset("json", data_files=DATA_FILE, split="train")
+dataset = dataset.shuffle(seed=42) # shuffle dataset
 
-# ✅ Data collator for batching
-data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False)
+# Load model and tokenizer
+MODEL_NAME = "meta-llama/Meta-Llama-3-8B-Instruct"
+tokenizer = LlamaTokenizer.from_pretrained(MODEL_NAME)
 
-# ✅ Training arguments (automatically saves after each epoch)
-training_args = TrainingArguments(
-    output_dir=SAVE_DIR,
-    evaluation_strategy="epoch",
-    learning_rate=5e-5,
-    per_device_train_batch_size=16,  # Adjust based on GPU memory
-    per_device_eval_batch_size=16,
-    num_train_epochs=3,  # Train for 3 epochs on half the dataset
-    weight_decay=0.01,
-    save_strategy="epoch",  # Save checkpoint after each epoch
-    save_total_limit=2,  # Keep latest 2 checkpoints
-    logging_dir="./logs",
-    logging_steps=50,
-    fp16=True,  # Mixed precision training (faster on A40, A100, V100)
+dataset = dataset.map(tokenize_function, batched=True)
+
+# Load Llama3 with 4-bit quantization
+model = LlamaForCausalLM.from_pretrained(
+    MODEL_NAME,
+    load_in_4bit=True,  
+    torch_dtype=torch.float16,
+    device_map="auto"
 )
 
-# ✅ Trainer setup
+lora_config = LoraConfig(
+    task_type=TaskType.CAUSAL_LM, 
+    r=16,  # Rank of LoRA matrices (lower = faster training, but less accuracy)
+    lora_alpha=32,  
+    lora_dropout=0.05,  # Dropout (prevents overfitting)
+    target_modules=["q_proj", "v_proj"]  
+)
+
+model = get_peft_model(model, lora_config)
+
+# Training args
+training_args = TrainingArguments(
+    output_dir="./llama3_finetuned",  # checkpoint
+    per_device_train_batch_size=4,  
+    gradient_accumulation_steps=8,  # Simulates batch size of 32
+    num_train_epochs=3,  
+    fp16=True,  # Mixed precision for faster training
+
+    learning_rate=2e-5,  
+
+    # Save checkpoints every 500 steps
+    save_steps=500,  
+    
+    # Resume training from the latest checkpoint automatically
+    save_total_limit=2,  # keep the last 2 checkpoints
+    logging_steps=100,  
+
+    save_strategy="steps", 
+    save_safetensors=True, 
+)
+
+# set up trainer
 trainer = Trainer(
     model=model,
     args=training_args,
-    train_dataset=tokenized_train_dataset,
-    tokenizer=tokenizer,
-    data_collator=data_collator,
+    train_dataset=dataset,
+    tokenizer=tokenizer
 )
+ 
+trainer.train() # training start
 
-# ✅ Train model
-trainer.train()
-
-# ✅ Save model checkpoint
-model.save_pretrained(SAVE_DIR)
-tokenizer.save_pretrained(SAVE_DIR)
-
-print(f"✅ Training completed! Model saved to {SAVE_DIR}")
-print(f"🚀 You can resume training later using 'gpt2_finetune_remaining.jsonl'.")
-
+if trainer.state.global_step >= trainer.state.max_steps:
+    model.save_pretrained("llama3_finetuned")
+    tokenizer.save_pretrained("llama3_finetuned")
+    print("Training complete! Fine-tuned model saved in 'llama3_finetuned'.")
+else:
+    print("Training was interrupted before completion. Checkpoints saved, but model not saved yet.")
