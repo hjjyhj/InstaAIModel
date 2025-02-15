@@ -9,7 +9,7 @@ from transformers import (
     BitsAndBytesConfig
 )
 from peft import LoraConfig, get_peft_model, TaskType
-from flash_attn.layers import FlashAttention  # Explicitly importing Flash Attention
+from flash_attn.layers import FlashAttention 
 
 # Check CUDA availability
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -57,7 +57,7 @@ model = LlamaForCausalLM.from_pretrained(
 )
 
 # Enable Flash Attention
-print("✅ Enabling Flash Attention...")
+print("Enabling Flash Attention...")
 for name, module in model.named_modules():
     if isinstance(module, torch.nn.MultiheadAttention):
         module.forward = FlashAttention.apply  # Replace standard attention with FlashAttention
