@@ -1,7 +1,7 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # ✅ Define a Persistent Save Path
-SAVE_PATH = "/tmp_data/models/Llama-3.1-8B-Instruct"  # Fix the incorrect assignment
+SAVE_PATH = "./Llama-3.1-8B-Instruct"  # Fix the incorrect assignment
 
 # ✅ Model Name from Hugging Face Hub
 MODEL_NAME = "meta-llama/Llama-3.1-8B-Instruct"

@@ -1,6 +1,7 @@
 __MACOSX/
 post_training_data.jsonl
-Meta-Llama-3.1-8B-Instruct/
+Llama-3.1-8B-Instruct/
 trainingdata1.jsonl
 trainingdata2.jsonl
 trainingdata3.jsonl
+llama3_finetuned

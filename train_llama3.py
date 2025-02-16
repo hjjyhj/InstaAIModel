@@ -10,7 +10,7 @@ DATA_FILE = "trainingdata1.jsonl"
 dataset = load_dataset("json", data_files=DATA_FILE, split="train")
 
 # Load tokenizer
-MODEL_PATH = "/tmp_data/models/Llama-3.1-8B-Instruct"
+MODEL_PATH = "./Llama-3.1-8B-Instruct"
 tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH, legacy=False)
 tokenizer.pad_token = tokenizer.eos_token
 
@@ -60,7 +60,7 @@ model = get_peft_model(model, lora_config)
 
 # Optimized Training Arguments
 training_args = TrainingArguments(
-    output_dir="/tmp_data/llama3_finetuned",
+    output_dir="./llama3_finetuned",
     per_device_train_batch_size=2,  # Reduce batch size
     gradient_accumulation_steps=16,  # Increase accumulation to keep effective batch size
     num_train_epochs=3,
@@ -77,7 +77,7 @@ training_args = TrainingArguments(
 )
 
 # Check for the latest checkpoint
-checkpoint_dir = "/tmp_data/llama3_finetuned"
+checkpoint_dir = "./llama3_finetuned"
 last_checkpoint = None
 if os.path.exists(checkpoint_dir) and os.listdir(checkpoint_dir):
     last_checkpoint = max(
@@ -100,6 +100,6 @@ trainer = Trainer(
 trainer.train(resume_from_checkpoint=last_checkpoint)
 
 # Save model after training
-model.save_pretrained("/tmp_data/llama3_finetuned")
-tokenizer.save_pretrained("/tmp_data/llama3_finetuned")
+model.save_pretrained("./llama3_finetuned")
+tokenizer.save_pretrained("./llama3_finetuned")
 print("Training complete! Model saved in '/tmp_data/llama3_finetuned'.")
