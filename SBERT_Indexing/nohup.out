@@ -1,0 +1,1149 @@
+Total items to process: 1639187
+Loaded checkpoint with 1900 items
+Processing items 1900 to 2000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 2000 to 2100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 2100 to 2200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 2200 to 2300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 2300 to 2400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 2400 to 2500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 2500 to 2600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 2600 to 2700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 2700 to 2800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 2800 to 2900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 2900 to 3000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 3000 to 3100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 3100 to 3200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 3200 to 3300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 3300 to 3400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 3400 to 3500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 3500 to 3600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 3600 to 3700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 3700 to 3800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 3800 to 3900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 3900 to 4000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 4000 to 4100
+Traceback (most recent call last):
+  File "/home/johnkimm/InstaAIModel/SBERT_Indexing/embedding.py", line 85, in <module>
+    main()
+  File "/home/johnkimm/InstaAIModel/SBERT_Indexing/embedding.py", line 73, in main
+    batch_results, current_index = process_batch(data, current_index, batch_size, model)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/johnkimm/InstaAIModel/SBERT_Indexing/embedding.py", line 41, in process_batch
+    embedding = model.encode(info_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/sentence_transformers/SentenceTransformer.py", line 623, in encode
+    out_features = self.forward(features, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/sentence_transformers/SentenceTransformer.py", line 690, in forward
+    input = module(input, **module_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/sentence_transformers/models/Transformer.py", line 442, in forward
+    output_states = self.auto_model(**trans_features, **kwargs, return_dict=False)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/transformers/models/mpnet/modeling_mpnet.py", line 544, in forward
+    encoder_outputs = self.encoder(
+                      ^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/transformers/models/mpnet/modeling_mpnet.py", line 334, in forward
+    layer_outputs = layer_module(
+                    ^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/transformers/models/mpnet/modeling_mpnet.py", line 304, in forward
+    layer_output = self.output(intermediate_output, attention_output)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/transformers/models/mpnet/modeling_mpnet.py", line 271, in forward
+    hidden_states = self.dense(hidden_states)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 125, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Total items to process: 1639187
+Loaded checkpoint with 4000 items
+Processing items 4000 to 4100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 4100 to 4200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 4200 to 4300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 4300 to 4400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 4400 to 4500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 4500 to 4600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 4600 to 4700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 4700 to 4800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 4800 to 4900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 4900 to 5000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 5000 to 5100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 5100 to 5200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 5200 to 5300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 5300 to 5400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 5400 to 5500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 5500 to 5600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 5600 to 5700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 5700 to 5800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 5800 to 5900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 5900 to 6000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 6000 to 6100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 6100 to 6200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 6200 to 6300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 6300 to 6400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 6400 to 6500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 6500 to 6600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 6600 to 6700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 6700 to 6800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 6800 to 6900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 6900 to 7000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 7000 to 7100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 7100 to 7200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 7200 to 7300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 7300 to 7400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 7400 to 7500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 7500 to 7600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 7600 to 7700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 7700 to 7800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 7800 to 7900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 7900 to 8000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 8000 to 8100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 8100 to 8200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 8200 to 8300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 8300 to 8400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 8400 to 8500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 8500 to 8600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 8600 to 8700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 8700 to 8800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 8800 to 8900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 8900 to 9000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 9000 to 9100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 9100 to 9200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 9200 to 9300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 9300 to 9400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 9400 to 9500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 9500 to 9600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 9600 to 9700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 9700 to 9800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 9800 to 9900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 9900 to 10000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 10000 to 10100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 10100 to 10200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 10200 to 10300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 10300 to 10400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 10400 to 10500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 10500 to 10600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 10600 to 10700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 10700 to 10800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 10800 to 10900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 10900 to 11000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 11000 to 11100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 11100 to 11200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 11200 to 11300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 11300 to 11400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 11400 to 11500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 11500 to 11600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 11600 to 11700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 11700 to 11800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 11800 to 11900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 11900 to 12000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 12000 to 12100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 12100 to 12200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 12200 to 12300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 12300 to 12400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 12400 to 12500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 12500 to 12600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 12600 to 12700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 12700 to 12800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 12800 to 12900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 12900 to 13000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 13000 to 13100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 13100 to 13200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 13200 to 13300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 13300 to 13400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 13400 to 13500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 13500 to 13600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 13600 to 13700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 13700 to 13800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 13800 to 13900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 13900 to 14000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 14000 to 14100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 14100 to 14200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 14200 to 14300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 14300 to 14400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 14400 to 14500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 14500 to 14600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 14600 to 14700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 14700 to 14800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 14800 to 14900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 14900 to 15000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 15000 to 15100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 15100 to 15200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 15200 to 15300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 15300 to 15400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 15400 to 15500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 15500 to 15600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 15600 to 15700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 15700 to 15800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 15800 to 15900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 15900 to 16000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 16000 to 16100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 16100 to 16200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 16200 to 16300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 16300 to 16400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 16400 to 16500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 16500 to 16600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 16600 to 16700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 16700 to 16800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 16800 to 16900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 16900 to 17000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 17000 to 17100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 17100 to 17200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 17200 to 17300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 17300 to 17400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 17400 to 17500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 17500 to 17600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 17600 to 17700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 17700 to 17800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 17800 to 17900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 17900 to 18000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 18000 to 18100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 18100 to 18200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 18200 to 18300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 18300 to 18400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 18400 to 18500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 18500 to 18600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 18600 to 18700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 18700 to 18800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 18800 to 18900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 18900 to 19000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 19000 to 19100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 19100 to 19200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 19200 to 19300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 19300 to 19400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 19400 to 19500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 19500 to 19600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 19600 to 19700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 19700 to 19800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 19800 to 19900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 19900 to 20000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 20000 to 20100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 20100 to 20200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 20200 to 20300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 20300 to 20400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 20400 to 20500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 20500 to 20600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 20600 to 20700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 20700 to 20800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 20800 to 20900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 20900 to 21000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 21000 to 21100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 21100 to 21200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 21200 to 21300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 21300 to 21400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 21400 to 21500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 21500 to 21600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 21600 to 21700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 21700 to 21800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 21800 to 21900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 21900 to 22000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 22000 to 22100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 22100 to 22200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 22200 to 22300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 22300 to 22400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 22400 to 22500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 22500 to 22600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 22600 to 22700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 22700 to 22800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 22800 to 22900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 22900 to 23000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 23000 to 23100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 23100 to 23200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 23200 to 23300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 23300 to 23400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 23400 to 23500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 23500 to 23600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 23600 to 23700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 23700 to 23800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 23800 to 23900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 23900 to 24000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 24000 to 24100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 24100 to 24200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 24200 to 24300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 24300 to 24400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 24400 to 24500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 24500 to 24600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 24600 to 24700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 24700 to 24800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 24800 to 24900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 24900 to 25000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 25000 to 25100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 25100 to 25200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 25200 to 25300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 25300 to 25400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 25400 to 25500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 25500 to 25600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 25600 to 25700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 25700 to 25800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 25800 to 25900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 25900 to 26000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 26000 to 26100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 26100 to 26200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 26200 to 26300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 26300 to 26400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 26400 to 26500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 26500 to 26600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 26600 to 26700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 26700 to 26800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 26800 to 26900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 26900 to 27000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 27000 to 27100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 27100 to 27200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 27200 to 27300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 27300 to 27400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 27400 to 27500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 27500 to 27600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 27600 to 27700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 27700 to 27800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 27800 to 27900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 27900 to 28000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 28000 to 28100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 28100 to 28200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 28200 to 28300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 28300 to 28400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 28400 to 28500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 28500 to 28600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 28600 to 28700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 28700 to 28800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 28800 to 28900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 28900 to 29000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 29000 to 29100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 29100 to 29200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 29200 to 29300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 29300 to 29400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 29400 to 29500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 29500 to 29600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 29600 to 29700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 29700 to 29800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 29800 to 29900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 29900 to 30000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 30000 to 30100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 30100 to 30200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 30200 to 30300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 30300 to 30400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 30400 to 30500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 30500 to 30600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 30600 to 30700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 30700 to 30800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 30800 to 30900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 30900 to 31000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 31000 to 31100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 31100 to 31200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 31200 to 31300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 31300 to 31400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 31400 to 31500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 31500 to 31600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 31600 to 31700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 31700 to 31800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 31800 to 31900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 31900 to 32000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 32000 to 32100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 32100 to 32200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 32200 to 32300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 32300 to 32400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 32400 to 32500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 32500 to 32600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 32600 to 32700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 32700 to 32800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 32800 to 32900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 32900 to 33000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 33000 to 33100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 33100 to 33200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 33200 to 33300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 33300 to 33400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 33400 to 33500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 33500 to 33600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 33600 to 33700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 33700 to 33800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 33800 to 33900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 33900 to 34000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 34000 to 34100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 34100 to 34200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 34200 to 34300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 34300 to 34400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 34400 to 34500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 34500 to 34600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 34600 to 34700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 34700 to 34800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 34800 to 34900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 34900 to 35000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 35000 to 35100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 35100 to 35200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 35200 to 35300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 35300 to 35400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 35400 to 35500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 35500 to 35600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 35600 to 35700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 35700 to 35800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 35800 to 35900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 35900 to 36000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 36000 to 36100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 36100 to 36200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 36200 to 36300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 36300 to 36400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 36400 to 36500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 36500 to 36600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 36600 to 36700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 36700 to 36800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 36800 to 36900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 36900 to 37000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 37000 to 37100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 37100 to 37200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 37200 to 37300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 37300 to 37400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 37400 to 37500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 37500 to 37600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 37600 to 37700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 37700 to 37800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 37800 to 37900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 37900 to 38000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 38000 to 38100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 38100 to 38200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 38200 to 38300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 38300 to 38400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 38400 to 38500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 38500 to 38600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 38600 to 38700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 38700 to 38800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 38800 to 38900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 38900 to 39000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 39000 to 39100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 39100 to 39200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 39200 to 39300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 39300 to 39400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 39400 to 39500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 39500 to 39600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 39600 to 39700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 39700 to 39800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 39800 to 39900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 39900 to 40000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 40000 to 40100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 40100 to 40200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 40200 to 40300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 40300 to 40400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 40400 to 40500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 40500 to 40600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 40600 to 40700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 40700 to 40800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 40800 to 40900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 40900 to 41000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 41000 to 41100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 41100 to 41200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 41200 to 41300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 41300 to 41400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 41400 to 41500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 41500 to 41600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 41600 to 41700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 41700 to 41800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 41800 to 41900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 41900 to 42000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 42000 to 42100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 42100 to 42200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 42200 to 42300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 42300 to 42400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 42400 to 42500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 42500 to 42600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 42600 to 42700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 42700 to 42800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 42800 to 42900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 42900 to 43000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 43000 to 43100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 43100 to 43200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 43200 to 43300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 43300 to 43400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 43400 to 43500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 43500 to 43600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 43600 to 43700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 43700 to 43800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 43800 to 43900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 43900 to 44000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 44000 to 44100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 44100 to 44200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 44200 to 44300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 44300 to 44400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 44400 to 44500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 44500 to 44600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 44600 to 44700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 44700 to 44800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 44800 to 44900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 44900 to 45000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 45000 to 45100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 45100 to 45200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 45200 to 45300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 45300 to 45400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 45400 to 45500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 45500 to 45600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 45600 to 45700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 45700 to 45800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 45800 to 45900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 45900 to 46000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 46000 to 46100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 46100 to 46200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 46200 to 46300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 46300 to 46400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 46400 to 46500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 46500 to 46600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 46600 to 46700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 46700 to 46800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 46800 to 46900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 46900 to 47000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 47000 to 47100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 47100 to 47200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 47200 to 47300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 47300 to 47400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 47400 to 47500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 47500 to 47600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 47600 to 47700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 47700 to 47800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 47800 to 47900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 47900 to 48000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 48000 to 48100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 48100 to 48200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 48200 to 48300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 48300 to 48400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 48400 to 48500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 48500 to 48600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 48600 to 48700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 48700 to 48800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 48800 to 48900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 48900 to 49000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 49000 to 49100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 49100 to 49200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 49200 to 49300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 49300 to 49400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 49400 to 49500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 49500 to 49600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 49600 to 49700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 49700 to 49800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 49800 to 49900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 49900 to 50000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 50000 to 50100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 50100 to 50200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 50200 to 50300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 50300 to 50400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 50400 to 50500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 50500 to 50600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 50600 to 50700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 50700 to 50800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 50800 to 50900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 50900 to 51000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 51000 to 51100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 51100 to 51200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 51200 to 51300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 51300 to 51400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 51400 to 51500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 51500 to 51600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 51600 to 51700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 51700 to 51800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 51800 to 51900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 51900 to 52000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 52000 to 52100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 52100 to 52200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 52200 to 52300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 52300 to 52400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 52400 to 52500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 52500 to 52600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 52600 to 52700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 52700 to 52800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 52800 to 52900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 52900 to 53000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 53000 to 53100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 53100 to 53200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 53200 to 53300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 53300 to 53400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 53400 to 53500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 53500 to 53600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 53600 to 53700
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 53700 to 53800
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 53800 to 53900
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 53900 to 54000
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 54000 to 54100
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 54100 to 54200
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 54200 to 54300
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 54300 to 54400
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 54400 to 54500
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Processing items 54500 to 54600
+Checkpoint saved to /scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation/embedding_checkpoint.json
+Traceback (most recent call last):
+  File "/home/johnkimm/InstaAIModel/SBERT_Indexing/embedding.py", line 85, in <module>
+    main()
+  File "/home/johnkimm/InstaAIModel/SBERT_Indexing/embedding.py", line 80, in main
+    json.dump(processed, f, indent=2, ensure_ascii=False)
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/json/encoder.py", line 430, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/json/encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/json/encoder.py", line 317, in _iterencode_list
+    yield buf + _floatstr(value)
+                ^^^^^^^^^^^^^^^^
+  File "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/miniconda3/envs/my_env/lib/python3.11/json/encoder.py", line 237, in floatstr
+    return _repr(o)
+           ^^^^^^^^
+KeyboardInterrupt
