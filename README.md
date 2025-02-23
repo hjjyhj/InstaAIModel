@@ -33,6 +33,11 @@ conda activate my_env
 ```
 Make sure to activate "my_env", since all the dependencies are already downloaded there.
 
+### Directories
+SBERT_Indexing: code for SBERT and adding FAISS index for the embeddings.
+model_download_train: code for downloading, checking and training LLama model
+run_models: code for running models
+
 ### Run the pre-trained LLama-3.1-8B-Instruct model
 ```sh
 cd /home/<your_directory>/InstaAIModel/run_models
