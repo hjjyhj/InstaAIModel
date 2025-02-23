@@ -5,3 +5,4 @@ trainingdata1.jsonl
 trainingdata2.jsonl
 trainingdata3.jsonl
 llama3_finetuned
+nohup.out
