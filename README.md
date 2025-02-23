@@ -1,7 +1,7 @@
 # EECS 487 Project
 
 ### Note
-Everything in the shared directory "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data" will be deleted in 60 days if the files were not used.
+Everything in the shared directory `/scratch/eecs487w25_class_root/eecs487w25_class/shared_data` will be deleted in 60 days if the files were not used.
 Make sure to save files that you need to your home directory.
 
 ### Setup
@@ -24,21 +24,19 @@ Check with
 ```sh
 which conda
 ```
-This should show the path within johnkimm_dir/miniconda3.
+This should show the path within `johnkimm_dir/miniconda3`.
 Note that is where all the data that we need will be shared. 
 
 You can activate the conda environment by 
 ```sh
 conda activate my_env
 ```
-Make sure to activate "my_env", since all the dependencies are already downloaded there.
+Make sure to activate `my_env`, since all the dependencies are already downloaded there.
 
 ### Directories
-SBERT_Indexing: code for SBERT and adding FAISS index for the embeddings.
-
-model_download_train: code for downloading, checking and training LLama model.
-
-run_models: code for running models.
+- `SBERT_Indexing`: code for SBERT and adding FAISS index for the embeddings.
+- `model_download_train`: code for downloading, checking and training LLama model.
+- `run_models`: code for running models.
 
 ### Run the pre-trained LLama-3.1-8B-Instruct model
 ```sh
