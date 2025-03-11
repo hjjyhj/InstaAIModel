@@ -1,6 +1,6 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-model_path = "../llama3_finetuned/checkpoint-42108"
+model_path = "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/checkpoint-42108"
 
 # Load the tokenizer and model
 tokenizer = AutoTokenizer.from_pretrained(model_path)
