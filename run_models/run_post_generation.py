@@ -1,4 +1,6 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 model_path = "../llama3_finetuned/checkpoint-42108"
 

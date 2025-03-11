@@ -47,5 +47,3 @@ Change the prompt to what you want to ask the model.
 
 ### SBERT & FAISS
 IN PROGRESS. Will be updated
-
-

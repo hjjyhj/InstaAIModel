@@ -6,3 +6,6 @@ trainingdata2.jsonl
 trainingdata3.jsonl
 llama3_finetuned
 nohup.out
+influencer_keywords_bigbird.jsonl
+influencer_recommendation_data.jsonl
+keywords_bigbird_checkpoint.jsonl
