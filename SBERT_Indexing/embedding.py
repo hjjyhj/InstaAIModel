@@ -59,7 +59,7 @@ def main():
     print(f"Total items to process: {total}")
 
     # Initialize SBERT model
-    model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
+    model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2", device="cuda")
     
     # Load existing checkpoint if available
     processed = load_checkpoint(checkpoint_file)  # List of processed entries
