@@ -6,11 +6,11 @@ from transformers import BitsAndBytesConfig
 import os
 
 # Move dataset to fastest storage
-DATA_FILE = "trainingdata1.jsonl"
+DATA_FILE = "trainingdata3.jsonl"
 dataset = load_dataset("json", data_files=DATA_FILE, split="train")
 
 # Load tokenizer
-MODEL_PATH = "/home/johnkimm/InstaAIModel/Llama-3.1-8B-Instruct"
+MODEL_PATH = "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/jhnkimm_dir/models/hub/models--Qwen--Qwen2.5-7B-Instruct"
 tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH, legacy=False)
 tokenizer.pad_token = tokenizer.eos_token
 

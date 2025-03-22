@@ -1,85 +1,54 @@
-import json
-import os
-import numpy as np
 from sentence_transformers import SentenceTransformer
+import json
+import numpy as np
+import os
 
-def load_data(json_path):
-    """Load JSON data from a file."""
-    with open(json_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return data
+# Load SBERT model
+model = SentenceTransformer('all-MiniLM-L12-v2')
 
-def save_checkpoint(data, checkpoint_path):
-    """
-    Save checkpoint data to disk atomically.
-    This writes to a temporary file first and then renames it to ensure the checkpoint file remains valid.
-    """
-    temp_file = checkpoint_path + ".tmp"
-    with open(temp_file, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
-    os.replace(temp_file, checkpoint_path)
-    print(f"Checkpoint saved to {checkpoint_path}")
+# File paths
+input_file = "keywords_bigbird.jsonl"
+checkpoint_file = "influencer_embeddings_checkpoint.npz"
 
-def load_checkpoint(checkpoint_path):
-    """Load checkpoint data from disk, if it exists."""
-    if os.path.exists(checkpoint_path):
-        with open(checkpoint_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        print(f"Loaded checkpoint with {len(data)} items")
-        return data
-    return []
+# Load checkpoint if available
+if os.path.exists(checkpoint_file):
+    print("Loading checkpoint...")
+    data = np.load(checkpoint_file, allow_pickle=True)
+    usernames = list(data["usernames"])
+    embeddings = list(data["embeddings"])
+    print(f"Resuming from {len(usernames)} influencers...")
+else:
+    usernames = []
+    embeddings = []
 
-def process_batch(data, start_index, batch_size, model):
-    """Process a batch of data, embedding the 'Info' field."""
-    batch_results = []
-    end_index = min(start_index + batch_size, len(data))
-    for i in range(start_index, end_index):
-        entry = data[i]
-        username = entry.get("Username", "").strip()
-        category = entry.get("Category", "").strip()
-        info_text = entry.get("Info", "")
-        embedding = model.encode(info_text)
-        batch_results.append({
-            "Username": username,
-            "Category": category,
-            "embedding": embedding.tolist()
-        })
-    return batch_results, end_index
+# Track already processed usernames to avoid duplicates
+processed_set = set(usernames)
 
-def main():
-    # File paths
-    base_dir = "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencer_recommendation"
-    input_json = os.path.join(base_dir, "combined.json")
-    checkpoint_file = os.path.join(base_dir, "embedding_checkpoint.json")
-    output_file = os.path.join(base_dir, "info_embeddings.json")
-    
-    # Load full data
-    data = load_data(input_json)
-    total = len(data)
-    print(f"Total items to process: {total}")
+# Read JSONL file and process new influencers
+with open(input_file, 'r', encoding='utf-8') as f:
+    for line in f:
+        data = json.loads(line.strip())
+        username = data["Username"]
 
-    # Initialize SBERT model
-    model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2", device="cuda")
-    
-    # Load existing checkpoint if available
-    processed = load_checkpoint(checkpoint_file)  # List of processed entries
-    processed_count = len(processed)
-    
-    batch_size = 100  # Adjust based on available GPU time/memory
-    current_index = processed_count  # Start where we left off
+        # Skip if already processed
+        if username in processed_set:
+            continue
 
-    while current_index < total:
-        print(f"Processing items {current_index} to {min(current_index + batch_size, total)}")
-        batch_results, current_index = process_batch(data, current_index, batch_size, model)
-        # Append new batch results to processed list
-        processed.extend(batch_results)
-        # Save checkpoint after each batch atomically
-        save_checkpoint(processed, checkpoint_file)
-        # (Optional) Save final output incrementally
-        with open(output_file, "w", encoding="utf-8") as f:
-            json.dump(processed, f, indent=2, ensure_ascii=False)
-    
-    print(f"All embeddings processed and saved to {output_file}")
+        important_tokens = data["ImportantTokens"]
 
-if __name__ == "__main__":
-    main()
+        # Convert to embedding
+        embedding = model.encode(important_tokens)
+
+        # Store results
+        usernames.append(username)
+        embeddings.append(embedding)
+        processed_set.add(username)
+
+        # Save checkpoint every 100 influencers
+        if len(usernames) % 100 == 0:
+            np.savez(checkpoint_file, usernames=usernames, embeddings=embeddings)
+            print(f"Checkpoint saved at {len(usernames)} influencers")
+
+# Final save
+np.savez(checkpoint_file, usernames=usernames, embeddings=embeddings)
+print(f"Final checkpoint saved: {len(usernames)} influencers processed.")
