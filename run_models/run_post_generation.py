@@ -1,6 +1,7 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
+print(device)
 
 model_path = "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/checkpoint-42108"
 
