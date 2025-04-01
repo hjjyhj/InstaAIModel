@@ -3,16 +3,28 @@ from collections import defaultdict
 
 # Hardcoded pipeline results (example)
 pipeline_top_k = {
-    "Food & Cooking": [
-        "twogoodtoresist", "chefdelicious", "mindyscookingobsession", "gourmetqueen", "melbournemeals"
+    "Beauty & Makeup": [
+        "yramer", "skinceuticals", "deszell" 
     ],
-    "Technology": [
-        "girlxdeparture", "techguru", "tripinaomi", "ai_innovator", "goldenriley_"
+    "Food & Cooking": [
+        "waymadi", "pardonyourfrench", "thespeedyspatula"
+    ],
+    "Art & Design": [
+        "carmineluino", "rebeccamock", "kmaeby"
+    ],
+    "Photography": [
+        "ksl_photography_official", "rodtrvn", "sethgaffar"
+    ],
+    "Travel": [
+        "ansonwunow", "businessjets", "thehistoriantraveller"
+    ],
+    "Pets & Animals": [
+        "lokistagram", "pickles.the.beagle", "cinniloveswalkies"
     ],
     # Add more categories as needed
 }
 
-K = 5  # Top-k influencers to evaluate
+K = 3  # Top-k influencers to evaluate
 GROUND_TRUTH_PATH = "/scratch/eecs487w25_class_root/eecs487w25_class/shared_data/johnkimm_dir/influencers_by_category.json"
 
 # NOTE: recall won't be really useful here since we're comparing against ALL ground truth per category
