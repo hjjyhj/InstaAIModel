@@ -11,3 +11,7 @@ influencer_recommendation_data.jsonl
 keywords_bigbird_checkpoint.jsonl
 mistral_finetuned
 qwen_finetuned
+L2_result.json
+IP_result.json
+inflencer_embeddings_checkpoint.npz
+keywords_bigbird.jsonl

@@ -1,0 +1,93 @@
+[
+    {
+      "Category": "Beauty & Cosmetics",
+      "Name": "Thayers Facial Toner",
+      "Product Description": [
+        "Alcohol-free",
+        "Formulated to soothe, tone, hydrate, and balance the pH level of skin",
+        "Reduces the look of pores, balances oily skin, and maintains the skin's moisture barrier"
+      ]
+    },
+    {
+      "Category": "Food & Cooking",
+      "Name": "Le Creuset Round Dutch Oven",
+      "Product Description": [
+        "Easy-to-clean enameled cast iron",
+        "Designed to circulate steam and return moisture back to the food",
+        "Compatible with all cooktops and oven-safe up to 500 degrees Fahrenheit"
+      ]
+    },
+    {
+      "Category": "Art & Design",
+      "Name": "Wacom Cintiq 16 Drawing Tablet",
+      "Product Description": [
+        "Battery-free",
+        "Adjustable folding legs to allow working in comfort",
+        "Cuts out distracting reflections with anti-glare film"
+      ]
+    },
+    {
+      "Category": "Photography",
+      "Name": "Canon PowerShot G7 X",
+      "Product Description": [
+        "Captures high-resolution images",
+        "Supports 4K video recording and microphone input",
+        "Ideal for versatile shooting from wide landscapes to detailed close-ups"
+      ]
+    },
+    {
+      "Category": "Travel",
+      "Name": "Samsonite Winfield 3 Hardside Luggage",
+      "Product Description": [
+        "Lightweight and durable polycarbonate construction",
+        "Features TSA-approved combination lock for security",
+        "Multi-directional spinner wheels for easy maneuverability"
+      ]
+    },
+    {
+      "Category": "Technology",
+      "Name": "Apple MacBook Air (M2, 2023)",
+      "Product Description": [
+        "Powered by Apple’s next-gen M2 chip for fast performance and energy efficiency",
+        "Features a 13.6-inch Liquid Retina display with over 500 nits of brightness",
+        "Lightweight and fanless design, offering silent operation and up to 18 hours of battery life"
+      ]
+    },
+    {
+      "Category": "Cinema & Film",
+      "Name": "Criterion Collection Blu-ray Edition",
+      "Product Description": [
+        "Restored and remastered classic and contemporary films",
+        "Includes director commentary, behind-the-scenes footage, and essays",
+        "High-quality packaging with collectible artwork"
+      ]
+    },
+    {
+      "Category": "Gaming",
+      "Name": "SteelSeries Arctis Nova Pro Wireless Gaming Headset",
+      "Product Description": [
+        "Hi-Fi audio system with active noise cancellation and 360° spatial audio",
+        "Dual wireless system with lossless 2.4GHz and Bluetooth connectivity",
+        "Swappable dual battery system for uninterrupted gameplay"
+      ]
+    },
+    {
+      "Category": "Parenting & Family",
+      "Name": "Graco 4Ever DLX 4-in-1 Convertible Car Seat",
+      "Product Description": [
+        "Transitions from rear-facing infant seat to forward-facing, highback booster, and backless booster",
+        "Easy-to-remove, machine-washable seat cover",
+        "Integrated belt lock-off for easy vehicle seat belt installation"
+      ]
+    },
+    {
+      "Category": "Pets & Animals",
+      "Name": "Furbo 360° Dog Camera",
+      "Product Description": [
+        "Full HD camera with 360° rotating view and two-way audio",
+        "Treat tossing feature for fun and interaction remotely",
+        "Real-time barking alerts and dog activity tracking"
+      ]
+    }
+  ]
+  
