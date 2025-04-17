@@ -72,7 +72,7 @@ python run_post_generation.py
 cd /home/<your_directory>/InstaAIModel/recommend_influencer
 python run_FAISS.py
 ```
-- Loads a pre-built FAISS index and influencer embeddings
+- Loads a previously-built FAISS index and influencer embeddings
 - Encodes a sample post using SBERT (`all-MiniLM-L12-v2`)
 - Returns the top k most semantically similar influencer names
 - Users can edit the `query_text` to try different inputs
