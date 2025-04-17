@@ -17,7 +17,7 @@ query_text = "Check out this amazing new skincare product that hydrates your ski
 query_embedding = model.encode(query_text).astype(np.float32).reshape(1, -1)
 
 # Search for the top 5 closest influencers
-k = 5
+k = 3
 distances, indices = index.search(query_embedding, k)
 
 # Retrieve influencer names
