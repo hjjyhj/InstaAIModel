@@ -14,8 +14,8 @@ model_paths = [
     # DEFAULT_PATH + "llama-fine-tuned",
     # DEFAULT_PATH + "qwen_finetuned",
     # DEFAULT_PATH + "mistral_finetuned",
-    DEFAULT_PATH + "Llama-3.1-8B-Instruct",
-    DEFAULT_PATH + "models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28"
+    # DEFAULT_PATH + "Llama-3.1-8B-Instruct",
+    # DEFAULT_PATH + "models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28"
 ]
 
 # Load products from input.json
@@ -65,8 +65,8 @@ for idx, product in enumerate(products):
 
     final_results[f"output_{idx + 1}"] = output_entry
 
-# Save results
-with open("untuned_ouptut.json", "w") as f:
+# Save results 
+with open("smaller_models_output.json", "w") as f:
     json.dump(final_results, f, indent=4)
 
 print("\n✅ All outputs saved to test.json")
