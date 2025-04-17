@@ -19,7 +19,7 @@ model_paths = [
 ]
 
 # Load products from input.json
-with open("input_all.json", "r") as f:
+with open("all_input_product_desc.json", "r") as f:
     products = json.load(f)
 
 # Helper function to create prompt
@@ -74,7 +74,7 @@ print("\n✅ All outputs saved to test.json")
 
 
 # combined_outputs = "\n\n".join(
-#     f"Output from model {i+1}:\n{result}" for i, result in enumerate(results.values())
+#     f"Output from model {i+1}:\n{result}" for i, result in enumerate(final_results.values())
 # )
 chat_prompt = (
     "You're a professional social media content creator.\n"

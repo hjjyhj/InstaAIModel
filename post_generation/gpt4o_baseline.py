@@ -1,7 +1,7 @@
 import json
 from openai import OpenAI
 
-with open('input_all.json', 'r') as f:
+with open('all_input_product_desc.json', 'r') as f:
     products = json.load(f)
  
 """
