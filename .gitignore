@@ -11,12 +11,11 @@ influencer_recommendation_data.jsonl
 keywords_bigbird_checkpoint.jsonl
 mistral_finetuned
 qwen_finetuned
-L2_result.json
-IP_result.json
 inflencer_embeddings_checkpoint.npz
 keywords_bigbird.jsonl
 faiss_index_flatIP.idx
-faiss_index_flatL2.
+faiss_index_flatL2.idx
 SBERT_Indexing/*.idx
 SBERT_Indexing/*.npz
 SBERT_Indexing/*.jsonl
+env
