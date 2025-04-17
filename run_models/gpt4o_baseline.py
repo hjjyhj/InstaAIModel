@@ -3,7 +3,7 @@ from openai import OpenAI
 
 with open('input_all.json', 'r') as f:
     products = json.load(f)
-
+ 
 """
 Convert each product into a formatted string
 """
