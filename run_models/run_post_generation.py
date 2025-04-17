@@ -87,7 +87,7 @@ chat_prompt = (
     "Now write the final Instagram post:"
 )
 
-# client = OpenAI(api_key="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")
+# client = OpenAI(api_key="")
 
 # # Send the combined outputs to GPT-4o
 # response = client.chat.completions.create(
