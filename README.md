@@ -1,4 +1,5 @@
-# EECS 487 Project
+# InstaAIModel
+## Automating Influencer Selection and Ad-Content Generation for Instagram Marketing
 
 ### Note
 Everything in the shared directory `/scratch/eecs487w25_class_root/eecs487w25_class/shared_data` will be deleted in 60 days if the files were not used.
