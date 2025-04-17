@@ -19,7 +19,7 @@ for product in products:
     formatted_products.append(formatted_str)
 
 
-api_key = ""
+api_key = "" 
 client = OpenAI(api_key=api_key)
 
 """
