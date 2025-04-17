@@ -18,4 +18,5 @@ faiss_index_flatL2.idx
 recommend_influencer/*.idx
 recommend_influencer/*.npz
 recommend_influencer/*.jsonl
-env 
+env
+.DS_Store
