@@ -83,7 +83,7 @@ python run_FAISS.py
 - 1.6 M Instagram posts that mention 26,910 brand names and were published by 38,113 influencers
 - [Link to Request the Dataset](https://sites.google.com/site/sbkimcv/dataset/instagram-influencer-dataset?authuser=0)
 
-We used the full dataset for training, as tasks like post generation and influencer recommendation do not have a single correct output. The dataset was split into three equal parts to fine-tune each smaller language model (Llama, Qwen, Mistral) individually, allowing them to learn diverse influencer styles. The features used in training were influencer usernames, influencer bios, and post captions.
+We used the full dataset for training, as tasks like post generation and influencer recommendation do not have a single correct output. The dataset was split into three equal parts to fine-tune each smaller language model (Llama, Qwen, Mistral) individually, allowing them to learn diverse influencer styles. For post generation, the feature used in training was post caption. For influencer recommendation, we used influencer usernames and bios.
 
 ## Our Team
 - Ho Jung Kim
