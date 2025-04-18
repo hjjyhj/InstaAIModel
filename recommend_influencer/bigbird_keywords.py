@@ -126,7 +126,7 @@ def process_influencers(input_file, output_file, checkpoint_file, batch_size=100
     print(f"All influencer token extraction processed and saved to {output_file}")
 
 if __name__ == "__main__":
-    base_dir = "/home/johnkimm/InstaAIModel/recommend_influencer"
+    base_dir = "/home/johnkimm/InstaAIModel/SBERT_Indexing"
     input_file = os.path.join(base_dir, "influencer_recommendation_data.jsonl")
     output_file = os.path.join(base_dir, "influencer_keywords_bigbird.jsonl")
     checkpoint_file = os.path.join(base_dir, "keywords_bigbird_checkpoint.jsonl")
