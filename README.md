@@ -12,7 +12,7 @@ Our pipeline uses GPT-4o to synthesize outputs from LLaMA-3.1-8B-Instruct, Qwen2
 ## Setup
 ### 1. Clone the Repository
 ```sh
-git clone https://github.com/hjjyhj/InstaAIModel.git
+git clone https://github.com/hannahsuny1/InstaAIModel.git
 cd InstaAIModel
 ```
 **Important**: Clone into your home directory, not the shared directory mentioned below.
