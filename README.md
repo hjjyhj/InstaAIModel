@@ -83,6 +83,8 @@ python run_FAISS.py
 - 1.6 M Instagram posts that mention 26,910 brand names and were published by 38,113 influencers
 - [Link to Request the Dataset](https://sites.google.com/site/sbkimcv/dataset/instagram-influencer-dataset?authuser=0)
 
+Citation: "Discovering Undisclosed Paid Partnership on Social Media via Aspect-Attentive Sponsored Post Learning," Seungbae Kim, Jyun-Yu Jiang, and Wei Wang.  In Proceedings of Web Search and Data Mining (WSDM '21), ACM, 2021.
+
 We used the full dataset for training, as tasks like post generation and influencer recommendation do not have a single correct output. The dataset was split into three equal parts to fine-tune each smaller language model (Llama, Qwen, Mistral) individually, allowing them to learn diverse influencer styles. For post generation, the feature used in training was post caption. For influencer recommendation, we embedded influencer usernames, influencer bios, and past post captions.
 
 ## Our Team
