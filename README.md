@@ -87,6 +87,9 @@ Citation: "Discovering Undisclosed Paid Partnership on Social Media via Aspect-A
 
 We used the full dataset for training, as tasks like post generation and influencer recommendation do not have a single correct output. The dataset was split into three equal parts to fine-tune each smaller language model (Llama, Qwen, Mistral) individually, allowing them to learn diverse influencer styles. For post generation, the feature used in fine-tuning was post caption. For influencer recommendation, we embedded influencer usernames, influencer bios, and past post captions.
 
+## Google Drive Access
+Additional resources such as sample outputs, evaluation data, and presentation materials can be found in the shared [Google Drive folder](https://drive.google.com/drive/folders/1JiOvj3PgKy4xqqZXNKI05HyB7Ef0gpDS?usp=sharing).
+
 ## Our Team
 - Ho Jung Kim
 - Hannah Sun
