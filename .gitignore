@@ -18,5 +18,8 @@ faiss_index_flatL2.idx
 recommend_influencer/*.idx
 recommend_influencer/*.npz
 recommend_influencer/*.jsonl
+SBERT_Indexing/*.idx
+SBERT_Indexing/*.npz
+SBERT_Indexing/*.jsonl
 env
 .DS_Store
